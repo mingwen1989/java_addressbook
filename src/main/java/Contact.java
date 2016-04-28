@@ -1,34 +1,51 @@
 import java.util.ArrayList;
-
+import java.util.*;
 
 public class Contact{
-  private String mFirstName;
-  private String mLastName;
+  private String mName;
   private String mBirthMonth;
   private Integer mId;
   private static ArrayList<Contact> contactList = new ArrayList<Contact>();
+  private ArrayList<Phone> mPhone;
+  private ArrayList<Email> mEmail;
 
-  public Contact(String firstName, String lastName, String birthDay){
-    mFirstName = firstName;
-    mLastName = lastName;
+  public Contact(String name, String birthDay){
+    mName = name;
     mBirthMonth = birthDay;
     contactList.add(this);
     mId = contactList.size();
+    mPhone = new ArrayList<Phone>();
+    mEmail = new ArrayList<Email>();
   }
   public String getName(){
-    return mFirstName + mLastName;
+    return mName;
   }
-  public ArrayList<Contact> getAll(){
+  public static ArrayList<Contact> getAll(){
     return contactList;
+  }
+  public static void clear() {
+    contactList.clear();
   }
   public Integer getId(){
     return mId;
   }
-  public static Contact find(Integer id){
+  public static Contact find(int id){
     try {
       return contactList.get(id - 1);
-    } catch (IndexOutOfBoundsException e) {
+    } catch (IndexOutOfBoundsException exception) {
       return null;
     }
   }
+    public ArrayList<Phone> getPhone() {
+      return mPhone;
+    }
+    public ArrayList<Email> getEmail() {
+      return mEmail;
+    }
+    public void addPhone(Phone phone) {
+      mPhone.add(phone);
+    }
+    public void addEmail(Email email) {
+      mEmail.add(email);
+    }
 }
