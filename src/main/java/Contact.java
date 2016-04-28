@@ -20,6 +20,9 @@ public class Contact{
   public String getName(){
     return mName;
   }
+  public String getBirthday(){
+    return mBirthMonth;
+  }
   public static ArrayList<Contact> getAll(){
     return contactList;
   }

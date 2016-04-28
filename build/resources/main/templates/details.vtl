@@ -1,29 +1,6 @@
-#if ($phone || $email)
-  <h1>$phone.getName</h1>
-  <h1>$email.getName</h1>
-#else
-  <h1> Phone/email not found </h1>
+<h1>All Details</h1>
+<ul>
+#foreach ($contact in $contacts)
+  <li><a href="/contacts/$contact.getId()">$contact.getPhone()</a></li>
 #end
-
-<h1>Add a Phone/email to $contact.getName() <h1>
-
-<form action="/contacts" method="post">
-  <input id="contactId" name="contactId" type="hidden" value="$contacts.getId()">
-
-  <div class="form-group">
-    <label for="phone">Phone Number:</label>
-    <input id="phone" name="phone" type="text" class="form-control">
-  </div>
-
-  <div class="form-group">
-    <label for="email">Email Address:</label>
-    <input id="email" name="email" type="text" class="form-control">
-  </div>
-
-  <button type="submit" class="btn btn-success">Add Phone</button>
-
-</form>
-
-
-
-<a href="/contacts">All Contacts</a>
+</ul>

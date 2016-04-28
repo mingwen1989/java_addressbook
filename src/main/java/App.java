@@ -18,7 +18,7 @@ public class App {
 
     get("/contacts/new", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-      model.put("template", "templates/contact-form.vtl");
+      model.put("template", "templates/contacts-form.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
@@ -46,25 +46,25 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    get("contacts/:id/tasks/new", (request, response) -> {
-      HashMap<String, Object> model = new HashMap<String, Object>();
-      Contact contact = Contact.find(Integer.parseInt(request.params(":id")));
-      model.put("contact", contact);
-      model.put("template", "templates/contacts-form.vtl");
-      return new ModelAndView(model, layout);
-    }, new VelocityTemplateEngine());
+    // get("contacts/:id/details/new", (request, response) -> {
+    //   HashMap<String, Object> model = new HashMap<String, Object>();
+    //   Contact contact = Contact.find(Integer.parseInt(request.params(":id")));
+    //   model.put("contact", contact);
+    //   model.put("template", "templates/contacts-form.vtl");
+    //   return new ModelAndView(model, layout);
+    // }, new VelocityTemplateEngine());
 
-    post("/tasks", (request, response) -> {
+    post("/details", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
 
-      Contact contact = Contact.find(Integer.parseInt(request.queryParams("categoryId")));
+      Contact contact = Contact.find(Integer.parseInt(request.queryParams("phoneId")));
 
       String phoneNumber = request.queryParams("phone");
-      String emailAddress = request.queryParams("email");
+    //  String emailAddress = request.queryParams("email");
       Phone phone = new Phone(phoneNumber);
-      Email email = new Email(emailAddress);
+    //  Email email = new Email(emailAddress);
       contact.addPhone(phone);
-      contact.addEmail(email);
+    //  contact.addEmail(email);
 
       model.put("contact", contact);
       model.put("template", "templates/contacts-details-success.vtl");
