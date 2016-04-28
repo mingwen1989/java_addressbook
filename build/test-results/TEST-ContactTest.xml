@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ContactTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2016-04-28T20:20:59" hostname="epicodus-39.local" time="0.002">
+<testsuite name="ContactTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2016-04-28T21:37:20" hostname="epicodus-39.local" time="0.002">
   <properties/>
   <testcase name="find_returnsContactsWithSameId_secondCategory" classname="ContactTest" time="0.001"/>
   <testcase name="addTask_addsPhoneToContact_true" classname="ContactTest" time="0.0"/>
   <testcase name="find_returnsNullWhenNoContactFound_null" classname="ContactTest" time="0.0"/>
   <testcase name="getContacts_initiallyReturnsEmptyListWithPhone_ArrayList" classname="ContactTest" time="0.0"/>
   <testcase name="getName_contactInstantiatesWithName_Home" classname="ContactTest" time="0.0"/>
-  <testcase name="clear_emptiesAllContactsFromList_0" classname="ContactTest" time="0.0"/>
+  <testcase name="clear_emptiesAllContactsFromList_0" classname="ContactTest" time="0.001"/>
   <testcase name="createsContact_instantiatesContactClass_true" classname="ContactTest" time="0.0"/>
   <testcase name="getContacts_initiallyReturnsEmptyListWithEmail_ArrayList" classname="ContactTest" time="0.0"/>
   <testcase name="getId_contactInstantiateWithAnId_1" classname="ContactTest" time="0.0"/>

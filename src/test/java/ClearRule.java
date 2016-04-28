@@ -4,7 +4,8 @@
 //   protected void before(){ }
 //
 //   protected void after() {
-//     Task.clear();
-//     Category.clear();
+//     Contact.clear();
+//     Phone.clear();
+//     Email.clear();
 //   }
 // }
