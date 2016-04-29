@@ -54,20 +54,21 @@ public class App {
     //   return new ModelAndView(model, layout);
     // }, new VelocityTemplateEngine());
 
-    post("/details", (request, response) -> {
+    post("/details/:id", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
 
-      Contact contact = Contact.find(Integer.parseInt(request.queryParams("phoneId")));
+      Contact contact = Contact.find(Integer.parseInt(request.params(":id")));
 
       String phoneNumber = request.queryParams("phone");
-    //  String emailAddress = request.queryParams("email");
+     String emailAddress = request.queryParams("email");
       Phone phone = new Phone(phoneNumber);
-    //  Email email = new Email(emailAddress);
+     Email email = new Email(emailAddress);
       contact.addPhone(phone);
-    //  contact.addEmail(email);
+     contact.addEmail(email);
 
       model.put("contact", contact);
-      model.put("template", "templates/contacts-details-success.vtl");
+
+      model.put("template", "templates/details.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 

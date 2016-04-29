@@ -1,6 +1,6 @@
 <h1>All Details</h1>
 <ul>
-#foreach ($contact in $contacts)
-  <li><a href="/contacts/$contact.getId()">$contact.getPhone()</a></li>
-#end
+
+  <li>$contact.getPhone().get(0).getPhone()</li>
+  <li>$contact.getEmail().get(0).getEmail()</li>
 </ul>

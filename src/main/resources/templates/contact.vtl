@@ -1,11 +1,13 @@
 <h1>All Details</h1>
 $contact.getName(), $contact.getBirthday()
-<form action="/details" method = "post">
+<form action="/details/$contact.getId()" method="post">
   <label for="phone">Contact's Phone Number</label>
-  <input id="phoneId" name="phoneId" type="hidden" value="$phone.getId()">
+  <!-- <input id="phoneId" name="phoneId" type="hidden" value="$contact.getPhone()"> -->
+
   <input id="phone" name="phone" type="text">
+
   <label for="email">Contact's Email Address</label>
-  <input id="emailId" name="emailId" type="hidden" value="$email.getId()">
+  <!-- <input id="emailId" name="emailId" type="hidden" value="$email.getId()"> -->
   <input id="email" name="email" type="text">
   <button type="submit" class="btn">Add Contact Details</button>
 </form>
