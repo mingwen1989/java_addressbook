@@ -1,6 +1,7 @@
 <h1>All Details</h1>
+Name, Birth Month
 $contact.getName(), $contact.getBirthday()
-<form action="/details/$contact.getId()" method="post">
+<br><form action="/details/$contact.getId()" method="post"><br>
   <label for="phone">Contact's Phone Number</label>
   <!-- <input id="phoneId" name="phoneId" type="hidden" value="$contact.getPhone()"> -->
 
@@ -11,6 +12,5 @@ $contact.getName(), $contact.getBirthday()
   <input id="email" name="email" type="text">
   <button type="submit" class="btn">Add Contact Details</button>
 </form>
-
-<a href="/contacts/new">Add a new contact</a>
+<br><a href="/contacts/new">Add a new contact</a>
 <a href="/contacts">All contacts</a>
